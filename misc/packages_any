@@ -9,12 +9,12 @@ firefox
 firewalld
 fwupd
 ghex
-gnome
-gnome-initial-setup
-gnome-menus
-gnome-packagekit
-gnome-power-manager
-gnome-tweaks
+#gnome
+#gnome-initial-setup
+#gnome-menus
+#gnome-packagekit
+#gnome-power-manager
+#gnome-tweaks
 gparted
 grub
 gst-libav
@@ -52,3 +52,6 @@ xf86-video-nouveau
 xf86-video-qxl
 xf86-video-vesa
 xf86-video-vmware
+#my packages :)
+xfce4
+sddm

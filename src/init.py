@@ -100,28 +100,33 @@ def main():
                 ai_call('useradd -c \'Live User\' -G users,wheel -m liveuser')
                 ai_call('passwd -d liveuser')
 
-                ai_call(
-                    'sed -i \'s/\\[daemon\\]/[daemon]\\nAutomaticLoginEnable=' +
-                    'True\\nAutomaticLogin=liveuser/\' /etc/gdm/custom.conf')
+#                ai_call(
+#                    'sed -i \'s/\\[daemon\\]/[daemon]\\nAutomaticLoginEnable=' +
+#                    'True\\nAutomaticLogin=liveuser/\' /etc/gdm/custom.conf')
+
+                 ai_call(
+                     "sed -i 's/^\\[Autologin\\]/[Autologin]\\nUser=liveuser\\nSession=xfce.desktop/' /etc/sddm.conf")
+
 
                 with open('/etc/sudoers', 'a', encoding='utf_8') as f:
                     f.write('\n%wheel ALL=(ALL) ALL\n')
 
-                ai_call(
-                    'sudo -u liveuser dbus-launch bash -c \'' +
-                    'gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type nothing && ' +
-                    'gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-type nothing && ' +
-                    'gsettings set org.gnome.shell welcome-dialog-last-shown-version 99999999 && ' +
-                    'gsettings set org.gnome.software allow-updates false && ' +
-                    'gsettings set org.gnome.software download-updates false' +
-                    '\'')
+#                ai_call(
+#                    'sudo -u liveuser dbus-launch bash -c \'' +
+#                    'gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type nothing && ' +
+#                    'gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-type nothing && ' +
+#                    'gsettings set org.gnome.shell welcome-dialog-last-shown-version 99999999 && ' +
+#                    'gsettings set org.gnome.software allow-updates false && ' +
+#                    'gsettings set org.gnome.software download-updates false' +
+#                    '\'')
 
                 ai_call('systemctl start firewalld')
                 ai_call('systemctl start NetworkManager')
                 ai_call('systemctl start avahi-daemon')
                 ai_call('systemctl start systemd-resolved')
                 ai_call('systemctl start spice-vdagentd')
-                ai_call('systemctl start gdm')
+                ai_call('systemctl start sddm')
+#                ai_call('systemctl start gdm')
                 sys.exit(0)
 
     if enable_gui:

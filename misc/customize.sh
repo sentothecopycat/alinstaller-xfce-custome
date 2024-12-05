@@ -14,7 +14,8 @@
 set -e
 
 # enable all locales
-sed -i 's/^#\([A-Za-z].* UTF-8\)/\1/' /etc/locale.gen
+#sed -i 's/^#\([A-Za-z].* UTF-8\)/\1/' /etc/locale.gen
+sed -i 's/^#\(en_US.UTF-8\)/\1/' /etc/locale.gen
 locale-gen
 
 # choose a mirror
