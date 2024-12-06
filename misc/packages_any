@@ -55,3 +55,6 @@ xf86-video-vmware
 #my packages :)
 xfce4
 sddm
+xfce4-goodies
+pavucontrol
+gvfs
