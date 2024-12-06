@@ -99,13 +99,17 @@ def main():
 
                 ai_call('useradd -c \'Live User\' -G users,wheel -m liveuser')
                 ai_call('passwd -d liveuser')
+                ai_call(
+                        'mkdir -p /etc/sddm.conf.d && ' +
+                        'echo "[Autologin]" > /etc/sddm.conf.d/autologin.conf && ' +
+                        'echo "User=liveuser" >> /etc/sddm.conf.d/autologin.conf && ' +
+                        'echo "Session=xfce.desktop" >> /etc/sddm.conf.d/autologin.conf')
 
 #                ai_call(
 #                    'sed -i \'s/\\[daemon\\]/[daemon]\\nAutomaticLoginEnable=' +
 #                    'True\\nAutomaticLogin=liveuser/\' /etc/gdm/custom.conf')
 
-                 ai_call(
-                     "sed -i 's/^\\[Autologin\\]/[Autologin]\\nUser=liveuser\\nSession=xfce.desktop/' /etc/sddm.conf")
+
 
 
                 with open('/etc/sudoers', 'a', encoding='utf_8') as f:
