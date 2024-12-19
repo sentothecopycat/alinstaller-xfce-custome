@@ -62,6 +62,7 @@ cp misc/alinstaller build/airootfs/usr/local/bin/alinstaller
 cp misc/pacman-init.service build/airootfs/etc/systemd/system/pacman-init.service
 cp misc/*.desktop build/airootfs/usr/local/share/applications
 cp misc/pacman.conf build/pacman.conf
+cp misc/customize_airootfs.sh build/airootfs/root/customize_airootfs.sh
 
 ./install-locale.sh build/airootfs/usr/local/share
 
