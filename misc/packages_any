@@ -1,12 +1,12 @@
-bluez
-bluez-utils
+#bluez
+#bluez-utils
 cups
 dconf-editor
 dnsmasq
-efibootmgr
+#efibootmgr
 efivar
 firefox
-firewalld
+#firewalld
 fwupd
 ghex
 #gnome
