@@ -135,7 +135,7 @@ class InstallLib():
 
         cmd += ' && systemctl disable multi-user.target'
         cmd += ' && systemctl set-default graphical.target'
-        cmd += ' && systemctl enable NetworkManager firewalld gdm'
+        cmd += ' && systemctl enable NetworkManager '
 
         cmd += ' && (systemctl enable avahi-daemon || true)'
         cmd += ' && (systemctl enable bluetooth || true)'
