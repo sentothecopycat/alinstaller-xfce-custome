@@ -1,1 +1,1 @@
-flatpak install citra
+flatpak install citra net.davidotek.pupgui2

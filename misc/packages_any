@@ -66,8 +66,9 @@ vlc
 libreoffice
 wine
 steam
-protonup-qt
 git
 github-cli
 jre-openjdk
 ffmpegthumbnailer
+kodi
+gvfs-mtp
