@@ -135,10 +135,10 @@ class InstallLib():
 
         cmd += ' && systemctl disable multi-user.target'
         cmd += ' && systemctl set-default graphical.target'
-        cmd += ' && systemctl enable NetworkManager '
+#        cmd += ' && systemctl enable NetworkManager '
 
         cmd += ' && (systemctl enable avahi-daemon || true)'
-        cmd += ' && (systemctl enable bluetooth || true)'
+#        cmd += ' && (systemctl enable bluetooth || true)'
         cmd += ' && (systemctl enable lvm2-monitor || true)'
         cmd += ' && (systemctl enable org.cups.cupsd || true)'
         cmd += ' && (systemctl enable spice-vdagentd || true)'
