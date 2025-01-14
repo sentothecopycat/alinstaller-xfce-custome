@@ -133,19 +133,19 @@ class InstallLib():
         cmd += ' && echo 127.0.0.1 localhost > /etc/hosts'
         cmd += ' && echo ::1 localhost >> /etc/hosts'
 
-        cmd += ' && systemctl disable multi-user.target'
-        cmd += ' && systemctl set-default graphical.target'
+#        cmd += ' && systemctl disable multi-user.target'
+#        cmd += ' && systemctl set-default graphical.target'
 #        cmd += ' && systemctl enable NetworkManager '
 
-        cmd += ' && (systemctl enable avahi-daemon || true)'
+#        cmd += ' && (systemctl enable avahi-daemon || true)'
 #        cmd += ' && (systemctl enable bluetooth || true)'
-        cmd += ' && (systemctl enable lvm2-monitor || true)'
-        cmd += ' && (systemctl enable org.cups.cupsd || true)'
-        cmd += ' && (systemctl enable spice-vdagentd || true)'
-        cmd += ' && (systemctl enable systemd-resolved || true)'
-        cmd += ' && (systemctl enable upower || true)'
+#        cmd += ' && (systemctl enable lvm2-monitor || true)'
+#        cmd += ' && (systemctl enable org.cups.cupsd || true)'
+#        cmd += ' && (systemctl enable spice-vdagentd || true)'
+#        cmd += ' && (systemctl enable systemd-resolved || true)'
+#        cmd += ' && (systemctl enable upower || true)'
 
-        cmd += ' && (systemctl --global enable pipewire || true)'
+#        cmd += ' && (systemctl --global enable pipewire || true)'
 
         # reenable pacman CheckSpace
         cmd += ' && sed -i "/# We cannot check disk space from within a chroot environment/d" /etc/pacman.conf'

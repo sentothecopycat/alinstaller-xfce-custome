@@ -97,8 +97,8 @@ def main():
                 ai_call(
                     'cp /usr/local/share/applications/*.desktop /etc/xdg/autostart')
 
-                ai_call('useradd -c \'Live User\' -G users,wheel -m liveuser')
-                ai_call('passwd -d liveuser')
+#                ai_call('useradd -c \'Live User\' -G users,wheel -m liveuser')
+#                ai_call('passwd -d liveuser')
                 ai_call(
                         'mkdir -p /etc/sddm.conf.d && ' +
                         'echo "[Autologin]" > /etc/sddm.conf.d/autologin.conf && ' +
